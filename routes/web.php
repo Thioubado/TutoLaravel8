@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/hello');
+    return view('/welcome');
 });
+
+// pour les routing, en premier il y'a l'URL, en second il y'a la page. URL, Page
+/* Route::get('/about',function () {
+    return view('/about');
+});
+*/
+//route pour about page
+Route::view('about', 'about',['name' =>'Momo']);
+
+//route pour contact page
+Route::view('contact', 'contact');
+
+Route::view('hello','hello');
+
+Route::view('welcome','welcome');

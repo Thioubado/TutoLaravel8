@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+// appel du controller
+use App\Http\Controllers\users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +32,6 @@ Route::view('contact', 'contact');
 Route::view('hello','hello');
 
 Route::view('welcome','welcome');
+
+// controller lesson 7
+Route::get("users/{user}", [Users::class, 'index']);

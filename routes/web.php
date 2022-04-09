@@ -43,6 +43,10 @@ Route::get('/users{momo}', function () {
     return view('/users');
 });
 */
+
+/*
 Route::get('/users/{name}', function ($name){
     return view('/users', ['name' => $name]);
 });
+*/
+Route::get('/users',[usersController::class, 'loadView']);

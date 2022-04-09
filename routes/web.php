@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 // appel du controller
 use App\Http\Controllers\users;
 use App\Http\Controllers\usersController;
+use App\Http\Controllers\HtmlFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +53,6 @@ Route::get('/users/{name}', function ($name){
 Route::get('/users',[usersController::class, 'loadView']);
 //Lesson 9: header component
 Route::view('header','header');
+
+Route::POST('login',[HtmlFormController::class, 'getData']);
+Route::view('me', 'login');

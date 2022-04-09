@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // appel du controller
 use App\Http\Controllers\users;
+use App\Http\Controllers\usersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,4 +35,14 @@ Route::view('hello','hello');
 Route::view('welcome','welcome');
 
 // controller lesson 7
-Route::get("users/{user}", [Users::class, 'index']);
+// Route::get("users/{user}", [Users::class, 'index']);
+// view lesson 8
+//Route::view('users', 'users');
+/* 
+Route::get('/users{momo}', function () {
+    return view('/users');
+});
+*/
+Route::get('/users/{name}', function ($name){
+    return view('/users', ['name' => $name]);
+});

@@ -1,3 +1,4 @@
+<x-header />
 <h1>Our About Page</h1>
 My name is {{$name}}<br>
 <a href="welcome">Welcome page</a><br>

@@ -50,3 +50,5 @@ Route::get('/users/{name}', function ($name){
 });
 */
 Route::get('/users',[usersController::class, 'loadView']);
+//Lesson 9: header component
+Route::view('header','header');

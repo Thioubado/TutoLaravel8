@@ -56,3 +56,6 @@ Route::view('header','header');
 
 Route::POST('login',[HtmlFormController::class, 'getData']);
 Route::view('me', 'login');
+
+// route pour le middlware. Le middleware permet de mettre des restrictions comme le login ou l'age pour ne pas acceder à certaines pages sit tu n'es pas logué ou tu n'as pas un certain age
+Route::view('noaccess', 'noaccess');

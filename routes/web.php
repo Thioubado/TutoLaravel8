@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\HtmlFormController;
+
+//appel de la classe userRestaurant
+
+use App\Http\Controllers\UsersRestaurant;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,3 +64,6 @@ Route::view('me', 'login');
 
 // route pour le middlware. Le middleware permet de mettre des restrictions comme le login ou l'age pour ne pas acceder à certaines pages sit tu n'es pas logué ou tu n'as pas un certain age
 Route::view('noaccess', 'noaccess');
+
+// database configuration an fetch data
+route::get('usersRestaurant', [UsersRestaurant::class, 'index']);

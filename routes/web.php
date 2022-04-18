@@ -10,6 +10,9 @@ use App\Http\Controllers\HtmlFormController;
 
 use App\Http\Controllers\UsersRestaurant;
 
+// appel de la classe eleveController
+use App\Http\Controllers\EleveController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,3 +70,6 @@ Route::view('noaccess', 'noaccess');
 
 // database configuration an fetch data
 route::get('usersRestaurant', [UsersRestaurant::class, 'index']);
+
+// Model
+route::get('eleves', [EleveController::class, 'getData']);

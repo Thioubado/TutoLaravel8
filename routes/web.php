@@ -13,6 +13,9 @@ use App\Http\Controllers\UsersRestaurant;
 // appel de la classe eleveController
 use App\Http\Controllers\EleveController;
 
+// appel de la classe HttpController
+use App\Http\Controllers\HttpController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +76,6 @@ route::get('usersRestaurant', [UsersRestaurant::class, 'index']);
 
 // Model
 route::get('eleves', [EleveController::class, 'getData']);
+
+// Http 
+route::get('http', [HttpController::class, 'index']);

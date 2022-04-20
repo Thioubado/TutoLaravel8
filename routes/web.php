@@ -19,7 +19,8 @@ use App\Http\Controllers\HttpController;
 //appel de la classe HttpRequestController
 use App\Http\Controllers\HttpRequestController;
 
-
+// appel de la classe SessionController
+use App\Http\Controllers\SessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,3 +88,25 @@ route::get('http', [HttpController::class, 'index']);
 // Http Request
 Route::view('httpRequest', 'httpRequest');
 Route::PUT('urlHttpRequest', [HttpRequestController::class, 'testRequest']);
+
+// Session
+Route::view('session', 'session');
+Route::POST('urlAuth', [SessionController::class, 'userAuth']);
+Route::view('profile', 'profile');
+
+Route::get('/session', function () {
+    if(session()->has('user'))
+    {
+        return redirect('profile');
+    }
+    return view('/session');
+});
+
+Route::get('/logout', function () {
+    if(session()->has('user'))
+    {
+        session()->pull('user');
+    }
+    return redirect('/session');
+});
+

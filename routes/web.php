@@ -16,6 +16,10 @@ use App\Http\Controllers\EleveController;
 // appel de la classe HttpController
 use App\Http\Controllers\HttpController;
 
+//appel de la classe HttpRequestController
+use App\Http\Controllers\HttpRequestController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +83,7 @@ route::get('eleves', [EleveController::class, 'getData']);
 
 // Http 
 route::get('http', [HttpController::class, 'index']);
+
+// Http Request
+Route::view('httpRequest', 'httpRequest');
+Route::PUT('urlHttpRequest', [HttpRequestController::class, 'testRequest']);
